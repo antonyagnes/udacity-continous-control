@@ -1,4 +1,4 @@
-﻿# Udacity Deep Reinforcement Learning Nanodegree
+# Udacity Deep Reinforcement Learning Nanodegree
 
 # Project 2: Continuous Control 
 For this project, I worked with the [Reacher](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher) environment and tried to solve Version 2 (contains 20 identical agents, each with its own copy of the environment). Each agent is a double-jointed arm that can move to target locations.
@@ -15,11 +15,17 @@ DDPG 4 neural networks: local actor,  target actor, local critic and target crit
 ### Implementation
 #### Hyperparameters used:
 BUFFER_SIZE = int(1e6)  # replay buffer size
+
 BATCH_SIZE = 1024       # minibatch size
+
 GAMMA = 0.99            # discount factor
+
 TAU = 1e-3              # for soft update of target parameters
+
 LR_ACTOR = 1e-4         # learning rate of the actor
+
 LR_CRITIC = 3e-4        # learning rate of the critic
+
 WEIGHT_DECAY = 0.0   # L2 weight decay
 
 #### Actor Network
@@ -32,7 +38,7 @@ In our case,  batch normalization to the state input and before all layers in th
 #### Noise
 A major challenge of learning in continuous action spaces is exploration. To address this issue noise class is added (Ornstein-Uhlenbeck process).
 ### Reward Plot
-The agent was able to reach reach score of 30.0 at 210th episode and it was able to maintain score > 30.0 until 400th episode.
+The agent was able to reach a score of 30.0 at 210th episode and it was able to maintain score > 30.0 until 400th episode.
 ![enter image description here](https://lh3.googleusercontent.com/L7yEWqOojU9WwkcNstsHj6VnYz3ZHZb0Om6zdkvGAFB1pTPgLpRLvHjIejqB2qrjwA7DN-ZfWmBzjiua5mej2IV3SpfHVbQy68TANquFpdEvpFYFmEXcl2gA5GPhWX0y2LDTU712YPKeu_yZkvFpfOZ1dAA4X1pSTvYOxLbLGSo9nLnVGjoIkljCsRN9gx-d1ODmuLd6y2YPX19_N6wpU350xmpKGh_TKZKFGugDEUNT-aONVFtLMBxAFpX-B7CS1eUswQ28ttAutC5ZmOM6UAgHYK9rKpwysHnIu6kl0AZQnmE5WMQQBtww5RiEFLnVHTEzADpYyFaoLjTbbaKfS2QcSkERqY_ITZ_glX4EzKU9w3reZhiPybG-6AB5BfwHtO5RlKiIullNqyvIczfggTZuHycb0fB_dbg8FGZhkj6nKoKWBf8AqcugeqOY0XaGb1WfNK8M6BNqxW8KBWEOkBCrBdwrtsD-sTHAr78aVspallN1H0ga0T6CYA2wRIO0MdKPKjvOmqvYJSHTxpnsRuTW3PyQIyqfqnpdrggibtM9eIYpJResmzwnciJ_7IaEmSBXRLYiF_HD8qCM2T-B0O223qipTvvdATGqG591xPrfIU4cJU4TbZQ_gtjdVhy1IINIJoOh7KJd75wSI02yQFhsQXTdjTsdNFBuaFHCyl6Hrcu2NHTs9FsQuaSTPRcOL4CaC29FY-3IYuY9WWW5jHkL=w382-h262-no?authuser=0)
 ### Ideas for Future Work
 - Try different hyper-parameters (luckily the first set of hyper-parameters thats were used seemed to yield the expected result).
